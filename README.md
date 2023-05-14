@@ -29,6 +29,7 @@ calculations of (+,-,/,*,%)
 
 
 ## Demo
+![](https://github.com/ngalinos95/iOS-Calculator/blob/main/calculator.gif)
 
 
 
