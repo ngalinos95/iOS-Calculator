@@ -6,3 +6,15 @@
 //
 
 import Foundation
+class Calculator : ObservableObject {
+    @Published var calc = Dial()
+}
+
+
+
+struct Dial : Identifiable {
+    var id = UUID()
+    var inp : String = "0"
+    var combination : String = "0"
+    var result : String = "0"
+}

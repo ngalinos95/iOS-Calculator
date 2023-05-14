@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct RoundButtonAC: View {
+    var symbol : String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(symbol)
+            .font(.system(size: 40 , weight: .bold))        .foregroundColor(.white)
+        .frame(maxWidth: 75, maxHeight: 75)
+        .background(Color.init(white: 0.6))
+        .clipShape(RoundedRectangle(cornerRadius: 50))
+        
     }
 }
 

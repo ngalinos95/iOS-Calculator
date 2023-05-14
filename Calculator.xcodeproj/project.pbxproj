@@ -14,6 +14,14 @@
 		CE8BA0952A102D28008B15FD /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0942A102D28008B15FD /* CalculatorTests.swift */; };
 		CE8BA09F2A102D28008B15FD /* CalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA09E2A102D28008B15FD /* CalculatorUITests.swift */; };
 		CE8BA0A12A102D28008B15FD /* CalculatorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0A02A102D28008B15FD /* CalculatorUITestsLaunchTests.swift */; };
+		CE8BA0AF2A102D52008B15FD /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0AE2A102D52008B15FD /* Data.swift */; };
+		CE8BA0B22A102D79008B15FD /* RoundButtonSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0B12A102D79008B15FD /* RoundButtonSymbol.swift */; };
+		CE8BA0B42A1035BA008B15FD /* RoundButtonNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0B32A1035BA008B15FD /* RoundButtonNumber.swift */; };
+		CE8BA0B62A103664008B15FD /* RoundButtonZero.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0B52A103664008B15FD /* RoundButtonZero.swift */; };
+		CE8BA0B82A10376F008B15FD /* RoundButtonAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0B72A10376F008B15FD /* RoundButtonAC.swift */; };
+		CE8BA0BB2A1037D0008B15FD /* Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0BA2A1037D0008B15FD /* Keypad.swift */; };
+		CE8BA0BD2A103E73008B15FD /* Dialer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0BC2A103E73008B15FD /* Dialer.swift */; };
+		CE8BA0BF2A103E7E008B15FD /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8BA0BE2A103E7E008B15FD /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +52,14 @@
 		CE8BA09A2A102D28008B15FD /* CalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8BA09E2A102D28008B15FD /* CalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITests.swift; sourceTree = "<group>"; };
 		CE8BA0A02A102D28008B15FD /* CalculatorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE8BA0AE2A102D52008B15FD /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		CE8BA0B12A102D79008B15FD /* RoundButtonSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonSymbol.swift; sourceTree = "<group>"; };
+		CE8BA0B32A1035BA008B15FD /* RoundButtonNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonNumber.swift; sourceTree = "<group>"; };
+		CE8BA0B52A103664008B15FD /* RoundButtonZero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonZero.swift; sourceTree = "<group>"; };
+		CE8BA0B72A10376F008B15FD /* RoundButtonAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonAC.swift; sourceTree = "<group>"; };
+		CE8BA0BA2A1037D0008B15FD /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
+		CE8BA0BC2A103E73008B15FD /* Dialer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialer.swift; sourceTree = "<group>"; };
+		CE8BA0BE2A103E7E008B15FD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +110,8 @@
 		CE8BA0822A102D27008B15FD /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				CE8BA0B02A102D5F008B15FD /* Views */,
+				CE8BA0AD2A102D35008B15FD /* Core Data */,
 				CE8BA0832A102D27008B15FD /* CalculatorApp.swift */,
 				CE8BA0852A102D27008B15FD /* ContentView.swift */,
 				CE8BA0872A102D28008B15FD /* Assets.xcassets */,
@@ -125,6 +143,28 @@
 				CE8BA0A02A102D28008B15FD /* CalculatorUITestsLaunchTests.swift */,
 			);
 			path = CalculatorUITests;
+			sourceTree = "<group>";
+		};
+		CE8BA0AD2A102D35008B15FD /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BA0AE2A102D52008B15FD /* Data.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		CE8BA0B02A102D5F008B15FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8BA0B12A102D79008B15FD /* RoundButtonSymbol.swift */,
+				CE8BA0B32A1035BA008B15FD /* RoundButtonNumber.swift */,
+				CE8BA0B52A103664008B15FD /* RoundButtonZero.swift */,
+				CE8BA0B72A10376F008B15FD /* RoundButtonAC.swift */,
+				CE8BA0BA2A1037D0008B15FD /* Keypad.swift */,
+				CE8BA0BC2A103E73008B15FD /* Dialer.swift */,
+				CE8BA0BE2A103E7E008B15FD /* Result.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +297,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8BA0B82A10376F008B15FD /* RoundButtonAC.swift in Sources */,
+				CE8BA0B22A102D79008B15FD /* RoundButtonSymbol.swift in Sources */,
 				CE8BA0862A102D27008B15FD /* ContentView.swift in Sources */,
+				CE8BA0B42A1035BA008B15FD /* RoundButtonNumber.swift in Sources */,
+				CE8BA0AF2A102D52008B15FD /* Data.swift in Sources */,
+				CE8BA0BB2A1037D0008B15FD /* Keypad.swift in Sources */,
+				CE8BA0BF2A103E7E008B15FD /* Result.swift in Sources */,
+				CE8BA0B62A103664008B15FD /* RoundButtonZero.swift in Sources */,
 				CE8BA0842A102D27008B15FD /* CalculatorApp.swift in Sources */,
+				CE8BA0BD2A103E73008B15FD /* Dialer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

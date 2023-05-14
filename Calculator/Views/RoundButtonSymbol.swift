@@ -11,11 +11,11 @@ struct RoundButtonSymbol: View {
     var symbol : String = ""
     
     var body: some View{
-        Text("+")
-            .font(.system(size: 40 , weight: .bold))        .foregroundColor(.white)
-        .frame(maxWidth: 50, maxHeight: 50)
+        Text(symbol)
+            .font(.system(size: 50 , weight: .bold))        .foregroundColor(.white)
+        .frame(maxWidth: 75, maxHeight: 75)
         .background(Color.blue)
-        .clipShape(RoundedRectangle(cornerRadius: 30))
+        .clipShape(RoundedRectangle(cornerRadius: 50))
         .shadow(radius: 10)
         
         

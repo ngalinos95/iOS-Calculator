@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct Dialer: View {
+    @EnvironmentObject var data : Calculator
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal){
+            HStack{
+                
+                Spacer()
+                Text(data.calc.combination)
+                    .foregroundColor(Color.black)
+                    .font(.system(size: 55))
+                
+                
+                
+            }
+        }
     }
 }
 
 struct Dialer_Previews: PreviewProvider {
     static var previews: some View {
-        Dialer()
+        Dialer().environmentObject(Calculator())
     }
 }

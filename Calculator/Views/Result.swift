@@ -8,13 +8,31 @@
 import SwiftUI
 
 struct Result: View {
+    @EnvironmentObject var data : Calculator
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal){
+            HStack{
+                
+                Spacer()
+                if(data.calc.result=="0"){
+                    Text("0")
+                        .foregroundColor(Color.black)
+                        .font(.system(size: 55))
+                }else{Text("\(data.calc.result)")
+                        .foregroundColor(Color.black)
+                        .font(.system(size: 55))}
+                
+                
+                
+                
+            }
+        }
     }
 }
 
 struct Result_Previews: PreviewProvider {
     static var previews: some View {
-        Result()
+        Result().environmentObject(Calculator())
     }
 }
