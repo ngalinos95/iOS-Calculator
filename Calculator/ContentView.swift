@@ -8,31 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var viewModel : CalculatorViewModel
+    @EnvironmentObject var viewModel: CalculatorViewModel
     var body: some View {
-        
         VStack {
-            
-            HStack{
+            HStack {
                 Spacer()
                 Result()
-//                    .environmentObject(viewModel)
-                
-            }.padding([.top,.bottom],25)
-            
+            }
+            .padding(.vertical, 25)
             Divider()
-            
-            
-            HStack{
+            HStack {
                 Spacer()
                 Dialer()
-//                    .environmentObject(viewModel)
-
-                
-            }.padding([.top,.bottom],25)
+            }.padding(.vertical, 25)
             Keypad()
-//                .environmentObject(viewModel)
-
         }
         .padding()
     }

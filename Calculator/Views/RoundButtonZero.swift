@@ -8,16 +8,15 @@
 import SwiftUI
 
 struct RoundButtonZero: View {
-    var symbol : String = ""
+    var symbol: String = ""
 
     var body: some View {
         Text(symbol)
-            .font(.system(size: 50 , weight: .bold))        .foregroundColor(.white)
-        .frame(maxWidth: 160, maxHeight: 75)
-        .background(Color.init(white: 0.25))
-        .clipShape(RoundedRectangle(cornerRadius: 50))
-        .shadow(radius: 10)
-        
+            .font(.system(size: 50, weight: .bold))        .foregroundColor(.white)
+            .frame(maxWidth: 160, maxHeight: 75)
+            .background(Color.init(white: 0.25))
+            .clipShape(RoundedRectangle(cornerRadius: 50))
+            .shadow(radius: 10)
     }
 }
 

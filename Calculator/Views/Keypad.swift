@@ -12,7 +12,7 @@ struct Keypad: View {
     @EnvironmentObject var data : CalculatorViewModel
 
     var body: some View {
-        
+
         VStack{
             Spacer()
             //1sr row
@@ -27,125 +27,115 @@ struct Keypad: View {
                 Button{
                     if(data.calc.combination.count==1){
                         data.calc.combination="0"
-                        
+
                     }else{
                         data.calc.combination.removeLast()
-                        
+
                     }
-                    
+
                 }
             label:{
                 RoundButtonAC(symbol: "DE")}
                 Button{if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
-                         data.calc.combination.last == "*" ||
-                         data.calc.combination.last == "/" ||
+                          data.calc.combination.last == "*" ||
+                          data.calc.combination.last == "/" ||
                           data.calc.combination.last == "."
-                      )
-                      {data.calc.combination.removeLast()
-                          data.calc.combination+="/100"
-                          
-                      }else{
-                          data.calc.combination+="/100"
-                      }
+                )
+                    {data.calc.combination.removeLast()
+                    data.calc.combination+="/100"
+
+                }else{
+                    data.calc.combination+="/100"
                 }
-            label:{
+                }
+            label: {
                 RoundButtonAC(symbol: "%")}
-                Button{if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
-                         data.calc.combination.last == "*" ||
-                         data.calc.combination.last == "/" ||
-                          data.calc.combination.last == "."
-                      )
-                      {data.calc.combination.removeLast()
-                          data.calc.combination+="/"
-                          
-                      }else{
-                          data.calc.combination+="/"
-                      }}
-            label:{
+                Button { if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
+                            data.calc.combination.last == "*" ||
+                            data.calc.combination.last == "/" ||
+                            data.calc.combination.last == "."
+                )
+                    { data.calc.combination.removeLast()
+                    data.calc.combination+="/"
+
+                } else {
+                    data.calc.combination+="/"
+                }}
+            label: {
                 RoundButtonSymbol(symbol: "÷")}
             }.padding(.bottom,15)
-            
-            //2nd row
-            
-            HStack(spacing: 15){
-                Button{
+            // 2nd row
+            HStack (spacing: 15) {
+                Button {
                     data.calc.inp.append("7")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="7"
-                    }else{data.calc.combination+="7"}
+                    } else { data.calc.combination+="7"}
 
                 }
-            label:{
+            label: {
                 RoundButtonNumber(symbol: "7")}
-                Button{
+                Button {
                     data.calc.inp.append("8")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="8"
-                    }else{data.calc.combination+="8"}
+                    } else { data.calc.combination+="8"}
                 }
-            label:{
+            label: {
                 RoundButtonNumber(symbol: "8")}
-                
                 Button{data.calc.inp.append("9")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="9"
                     }else{data.calc.combination+="9"}}
-            label:{
+            label: {
                 RoundButtonNumber(symbol: "9")}
                 Button{if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
-                         data.calc.combination.last == "*" ||
-                         data.calc.combination.last == "/" ||
+                          data.calc.combination.last == "*" ||
+                          data.calc.combination.last == "/" ||
                           data.calc.combination.last == "."
-                      )
-                      {data.calc.combination.removeLast()
-                          data.calc.combination+="*"
-                          
-                      }else{
-                          data.calc.combination+="*"
-                      }}
+                )
+                    { data.calc.combination.removeLast()
+                    data.calc.combination+="*"
+                } else {
+                    data.calc.combination+="*"
+                }}
             label:{
                 RoundButtonSymbol(symbol: "×")}
             }.padding(.bottom,15)
-            
             //3d row
-            
-            HStack(spacing: 15){
-                Button{data.calc.inp.append("4")
+            HStack(spacing: 15) {
+                Button{ data.calc.inp.append("4")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="4"
-                    }else{data.calc.combination+="4"}}
-            label:{
+                    } else { data.calc.combination+="4"}}
+            label: {
                 RoundButtonNumber(symbol: "4")}
-                Button{data.calc.inp.append("5")
+                Button{ data.calc.inp.append("5")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="5"
-                    }else{data.calc.combination+="5"}}
+                    } else { data.calc.combination+="5"}}
             label:{
                 RoundButtonNumber(symbol: "5")}
-                Button{data.calc.inp.append("6")
+                Button { data.calc.inp.append("6")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="6"
-                    }else{data.calc.combination+="6"}}
-            label:{
+                    } else { data.calc.combination+="6"}}
+            label: {
                 RoundButtonNumber(symbol: "6")}
                 Button{if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
                           data.calc.combination.last == "*" ||
                           data.calc.combination.last == "/" ||
                           data.calc.combination.last == "."
-                       )
-                       {data.calc.combination.removeLast()
-                           data.calc.combination+="-"
-                           
-                       }else{
-                           data.calc.combination+="-"
-                       }}
-            label:{
+                )
+                    { data.calc.combination.removeLast()
+                    data.calc.combination+="-"
+                } else {
+                    data.calc.combination+="-"
+                }}
+            label: {
                 RoundButtonSymbol(symbol: "-")}
-            }.padding(.bottom,15)
-            
-            //4th row
-            
-            
+            }.padding(.bottom, 15)
+            // 4th row
             HStack(spacing: 15){
                 Button{data.calc.inp.append("1")
                     if(data.calc.combination.elementsEqual("0")){
@@ -169,72 +159,52 @@ struct Keypad: View {
                           data.calc.combination.last == "*" ||
                           data.calc.combination.last == "/" ||
                           data.calc.combination.last == "."
-                       )
-                       {data.calc.combination.removeLast()
-                           data.calc.combination+="+"
-                           
-                       }else{
-                           data.calc.combination+="+"
-                       }}
+                )
+                    {data.calc.combination.removeLast()
+                    data.calc.combination+="+"
+
+                }else{
+                    data.calc.combination+="+"
+                }}
             label:{
                 RoundButtonSymbol(symbol: "+")}
-            }.padding(.bottom,15)
-            
-            
-            //5th row
-            
-            
+            }.padding(.bottom, 15)
+            // 5th row
             HStack(spacing: 15){
                 Button{data.calc.inp.append("0")
                     if(data.calc.combination.elementsEqual("0")){
                         data.calc.combination="0"
                     }else if (data.calc.combination.last=="/"){
-                        
                     }
                     else{data.calc.combination+="0"}}
             label:{
                 RoundButtonZero(symbol: "0")}
-            
                 Button{if(data.calc.combination.last == "+" || data.calc.combination.last == "-" ||
                           data.calc.combination.last == "*" ||
                           data.calc.combination.last == "/" ||
                           data.calc.combination.last == "."
-                       )
-                       {data.calc.combination.removeLast()
-                           data.calc.combination+="."
-                           
-                       }else{
-                           data.calc.combination+="."
-                       }}
-            label:{
+                )
+                    { data.calc.combination.removeLast()
+                    data.calc.combination+="."
+
+                } else {
+                    data.calc.combination+="."
+                }}
+            label: {
                 RoundButtonNumber(symbol: ",")}
-                Button{
+                Button {
                     let expression = NSExpression(format: data.calc.combination)
                     if let result = expression.expressionValue(with: nil, context: nil) as? Double {
-                
+
                         data.calc.result = String(result)
                     } else {
                         print("Invalid equation")
                     }
                 }
-            label:{
+            label: {
                 RoundButtonSymbol(symbol: "=")}
-            }.padding(.bottom,15)
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            }.padding(.bottom, 15)
         }
-        
-        
     }
 }
 
