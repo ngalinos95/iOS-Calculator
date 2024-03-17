@@ -9,10 +9,14 @@ import SwiftUI
 
 struct RoundButtonSymbol: View {
     var symbol: String
-    var body: some View {
+    var action: () -> Void
+
+    @ViewBuilder
+    var buttonLabel: some View {
         VStack(alignment: .center) {
             Text(symbol)
-                .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
+                .font(.system(size: 50, weight: .bold))        
+                .foregroundStyle(.white)
         }
         .padding(10)
         /** we set the frame
@@ -29,9 +33,18 @@ struct RoundButtonSymbol: View {
         }
         .padding(7)
     }
+
+    var body: some View {
+        Button {
+            action()
+        } label: {
+            buttonLabel
+        }
+    }
 }
 #Preview("Round Button Symbol") {
-    RoundButtonSymbol(symbol: "+")
+    RoundButtonSymbol(symbol: "+",
+                      action: { print("button is pressed") })
         .frame(width: 90, height: 90)
 }
 

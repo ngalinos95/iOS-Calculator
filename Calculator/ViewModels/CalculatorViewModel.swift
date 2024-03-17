@@ -12,7 +12,7 @@ class CalculatorViewModel : ObservableObject {
     // MARK: Keypad Actions
 
     /** AC Button Action ,
-         resets the Published variable
+     resets the Published variable
      */
     func acButtonAction() {
         self.calc = Dial()
@@ -37,34 +37,64 @@ class CalculatorViewModel : ObservableObject {
             return
         }
         switch lastOperator {
-            case "+", "-", "*", "/", ".":
-                calc.combination.removeLast()
-                calc.combination += "/100"
-            default:
-                calc.combination += "/100"
+        case "+", "-", "*", "/", ".":
+            calc.combination.removeLast()
+            calc.combination += "/100"
+        default:
+            calc.combination += "/100"
         }
     }
 
     /** Divide Button Action ,
      adds to  the current combination the divide  operator ÷
      */
-    func divideButtonAction() {
+    func operatorButtonAction(symbol: String) {
         guard let lastOperator = calc.combination.last else {
             return
         }
         switch lastOperator {
-            case "+", "-", "*", "/", ".":
-                calc.combination.removeLast()
-                calc.combination += "/"
-            default:
-                calc.combination += "/"
+        case "+", "-", "*", "/", ".":
+            calc.combination.removeLast()
+            calc.combination += symbol
+        default:
+            calc.combination += symbol
+        }
+    }
+    /** Number Button Action ,
+     adds to  the current combination the given number input
+     */
+    func numberButtonAction(number: String) {
+        calc.inp.append(number)
+
+        if calc.combination.elementsEqual("0") {
+            calc.combination = number
+        } else if (calc.combination.last=="/" && number == "0") {
+            return
+        } else {
+            calc.combination += number
+        }
+    }
+
+    /** Calc Button Action ,
+     Calculates the result
+     */
+    func calcButtonAction() {
+        guard let lastOperator = calc.combination.last else {
+            return
+        }
+        switch lastOperator {
+        case "+", "-", "*", "/", ".":
+            return
+        default:
+            let expression = NSExpression(format: calc.combination)
+            if let result = expression.expressionValue(with: nil, context: nil) as? Double {
+                calc.result = String(result)
+            } else {
+                print("Invalid equation")
+            }
         }
     }
 }
-
-
-
-
 
 struct Dial : Identifiable {
     var id = UUID()

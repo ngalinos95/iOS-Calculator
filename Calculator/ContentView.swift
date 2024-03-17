@@ -20,7 +20,8 @@ struct ContentView: View {
             HStack {
                 Spacer()
                 Dialer()
-            }.padding(.vertical, 25)
+            }
+            .padding(.vertical, 25)
             Keypad()
         }
         .padding()

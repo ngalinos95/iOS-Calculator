@@ -9,7 +9,10 @@ import SwiftUI
 
 struct RoundButtonZero: View {
     var symbol: String
-    var body: some View {
+    var action: () -> Void
+
+    @ViewBuilder
+    var buttonLabel: some View {
         VStack(alignment: .center) {
             Text(symbol)
                 .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
@@ -20,8 +23,8 @@ struct RoundButtonZero: View {
                alignment: .center)
         .background {
             /** style should be circular
-                snapshot testing have some incosistencies regarding
-                .continues style in SwiftUI creating uneven lines
+             snapshot testing have some incosistencies regarding
+             .continues style in SwiftUI creating uneven lines
              */
             RoundedRectangle(cornerRadius: 50, style: .circular)
                 .foregroundStyle(Color.init(white: 0.25))
@@ -29,9 +32,18 @@ struct RoundButtonZero: View {
         }
         .padding(7)
     }
+
+    var body: some View {
+        Button {
+            action()
+        } label: {
+            buttonLabel
+        }
+    }
 }
 
 #Preview(" Roudned Zero Button") {
-    RoundButtonZero(symbol: "0")
+    RoundButtonZero(symbol: "0",
+                    action: { print("Button pressed") })
 }
 
