@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct Dialer: View {
-    @EnvironmentObject var data : CalculatorViewModel
+    @EnvironmentObject var viewModel : CalculatorViewModel
 
     var body: some View {
         ScrollView(.horizontal){
             HStack{
                 
                 Spacer()
-                Text(data.calc.combination)
+                Text(viewModel.calc.combination)
                     .foregroundColor(Color.black)
                     .font(.system(size: 55))
-                
-                
-                
+
             }
         }
     }

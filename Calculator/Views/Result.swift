@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct Result: View {
-    @EnvironmentObject var data : CalculatorViewModel
+    @EnvironmentObject var viewModel : CalculatorViewModel
 
     var body: some View {
         ScrollView(.horizontal){
             HStack{
                 
                 Spacer()
-                if(data.calc.result=="0"){
+                if(viewModel.calc.result=="0"){
                     Text("0")
                         .foregroundColor(Color.black)
                         .font(.system(size: 55))
-                }else{Text("\(data.calc.result)")
+                }else{Text("\(viewModel.calc.result)")
                         .foregroundColor(Color.black)
                         .font(.system(size: 55))}
                 

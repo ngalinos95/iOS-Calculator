@@ -11,59 +11,59 @@ import Foundation
 struct Keypad: View {
     @EnvironmentObject var viewModel : CalculatorViewModel
 
+
+    @ViewBuilder
+    var acButton: some View {
+        Button(action: {
+            viewModel.acButtonAction()
+        },
+               label: {
+            RoundButtonAC(symbol: "AC")
+        })
+    }
+
+    @ViewBuilder
+    var deButton: some View {
+        Button(action: {
+            viewModel.deButtonAction()
+        },
+               label: {
+            RoundButtonAC(symbol: "DE")
+        })
+    }
+
+    @ViewBuilder
+    var percentageButton: some View {
+        Button(action: {
+            viewModel.percentageButtonAction()
+        }, label: {
+            RoundButtonAC(symbol: "%")
+        })
+    }
+
+    @ViewBuilder
+    var divideButton: some View {
+        Button(action: {
+            viewModel.divideButtonAction()
+        }, label: {
+            RoundButtonSymbol(symbol: "÷")
+        })
+    }
+
     var body: some View {
 
         VStack(spacing: 0){
             Spacer()
             //1sr row
             HStack(spacing: 0){
-                Button{
-                    viewModel.calc.inp="0"
-                    viewModel.calc.combination="0"
-                    viewModel.calc.result="0"
-                }
-            label:{
-                RoundButtonAC(symbol: "AC")}
-                Button{
-                    if(viewModel.calc.combination.count==1){
-                        viewModel.calc.combination="0"
-
-                    }else{
-                        viewModel.calc.combination.removeLast()
-
-                    }
-
-                }
-            label:{
-                RoundButtonAC(symbol: "DE")}
-                Button{if(viewModel.calc.combination.last == "+" || viewModel.calc.combination.last == "-" ||
-                          viewModel.calc.combination.last == "*" ||
-                          viewModel.calc.combination.last == "/" ||
-                          viewModel.calc.combination.last == "."
-                )
-                    {viewModel.calc.combination.removeLast()
-                    viewModel.calc.combination+="/100"
-
-                }else{
-                    viewModel.calc.combination+="/100"
-                }
-                }
-            label: {
-                RoundButtonAC(symbol: "%")}
-                Button { if(viewModel.calc.combination.last == "+" || viewModel.calc.combination.last == "-" ||
-                            viewModel.calc.combination.last == "*" ||
-                            viewModel.calc.combination.last == "/" ||
-                            viewModel.calc.combination.last == "."
-                )
-                    { viewModel.calc.combination.removeLast()
-                    viewModel.calc.combination+="/"
-
-                } else {
-                    viewModel.calc.combination+="/"
-                }}
-            label: {
-                RoundButtonSymbol(symbol: "÷")}
-            }
+                // AC Button
+                acButton
+                // DE Button
+                deButton
+                // Percentage Button
+                percentageButton
+                // Divide Button
+                divideButton
             // 2nd row
             HStack (spacing: 0) {
                 Button {
