@@ -14,9 +14,10 @@ struct RoundButtonSymbol: View {
             Text(symbol)
                 .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
         }
+        .padding(10)
         /** we set the frame
-         to infinty in order for out round button
-         view to adopt based on the available space
+         to infinty in order for our round button
+         view to adapt based on the available space
          */
         .frame(maxWidth: .infinity,
                maxHeight: .infinity,
@@ -24,13 +25,13 @@ struct RoundButtonSymbol: View {
         .background {
             Circle()
                 .foregroundStyle(.blue)
+                .shadow(radius: 10)
         }
-        .padding(10)
+        .padding(7)
     }
 }
 #Preview("Round Button Symbol") {
     RoundButtonSymbol(symbol: "+")
         .frame(width: 90, height: 90)
-        .previewDisplayName("Light Mode")
 }
 

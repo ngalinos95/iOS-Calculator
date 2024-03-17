@@ -8,20 +8,30 @@
 import SwiftUI
 
 struct RoundButtonZero: View {
-    var symbol: String = ""
-
+    var symbol: String
     var body: some View {
-        Text(symbol)
-            .font(.system(size: 50, weight: .bold))        .foregroundColor(.white)
-            .frame(maxWidth: 160, maxHeight: 75)
-            .background(Color.init(white: 0.25))
-            .clipShape(RoundedRectangle(cornerRadius: 50))
-            .shadow(radius: 10)
+        VStack(alignment: .center) {
+            Text(symbol)
+                .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
+        }
+        .padding(10)
+        .frame(width: 175,
+               height: 75,
+               alignment: .center)
+        .background {
+            /** style should be circular
+                snapshot testing have some incosistencies regarding
+                .continues style in SwiftUI creating uneven lines
+             */
+            RoundedRectangle(cornerRadius: 50, style: .circular)
+                .foregroundStyle(Color.init(white: 0.25))
+                .shadow(radius: 10)
+        }
+        .padding(7)
     }
 }
 
-struct RoundButtonZero_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundButtonZero()
-    }
+#Preview(" Roudned Zero Button") {
+    RoundButtonZero(symbol: "0")
 }
+

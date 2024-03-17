@@ -8,19 +8,30 @@
 import SwiftUI
 
 struct RoundButtonNumber: View {
-    var symbol: String = ""
+    var symbol: String
     var body: some View {
-        Text(symbol)
-            .font(.system(size: 40, weight: .bold))        .foregroundColor(.white)
-            .frame(maxWidth: 75, maxHeight: 75)
-            .background(Color.init(white: 0.25))
-            .clipShape(RoundedRectangle(cornerRadius: 50))
-            .shadow(radius: 10)
+        VStack(alignment: .center) {
+            Text(symbol)
+                .font(.system(size: 40, weight: .bold))        .foregroundStyle(.white)
+        }
+        .padding(10)
+        /** we set the frame
+         to infinty in order for our round button
+         view to adopt based on the available space
+         */
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity,
+               alignment: .center)
+        .background {
+            Circle()
+                .foregroundStyle(Color.init(white: 0.25))
+                .shadow(radius: 10)
+        }
+        .padding(7)
     }
 }
 
-struct RoundButtonNumber_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundButtonNumber()
-    }
+#Preview("Round Button Number") {
+    RoundButtonNumber(symbol: "2")
+        .frame(width: 90, height: 90)
 }
