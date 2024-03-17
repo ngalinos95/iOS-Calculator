@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var data : Calculator
+    @EnvironmentObject var viewModel : CalculatorViewModel
     var body: some View {
         
         VStack {
@@ -16,7 +16,7 @@ struct ContentView: View {
             HStack{
                 Spacer()
                 Result()
-                    .environmentObject(data)
+//                    .environmentObject(viewModel)
                 
             }.padding([.top,.bottom],25)
             
@@ -25,12 +25,14 @@ struct ContentView: View {
             
             HStack{
                 Spacer()
-                Dialer().environmentObject(data)
-        
+                Dialer()
+//                    .environmentObject(viewModel)
+
                 
             }.padding([.top,.bottom],25)
-            Keypad().environmentObject(data)
-            
+            Keypad()
+//                .environmentObject(viewModel)
+
         }
         .padding()
     }
@@ -38,6 +40,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(Calculator())
+        ContentView().environmentObject(CalculatorViewModel())
     }
 }

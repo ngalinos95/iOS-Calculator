@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 struct Keypad: View {
-    @EnvironmentObject var data : Calculator
+    @EnvironmentObject var data : CalculatorViewModel
 
     var body: some View {
         
@@ -240,6 +240,6 @@ struct Keypad: View {
 
 struct Keypad_Previews: PreviewProvider {
     static var previews: some View {
-        Keypad().environmentObject(Calculator())
+        Keypad().environmentObject(CalculatorViewModel())
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Result: View {
-    @EnvironmentObject var data : Calculator
+    @EnvironmentObject var data : CalculatorViewModel
 
     var body: some View {
         ScrollView(.horizontal){
@@ -33,6 +33,6 @@ struct Result: View {
 
 struct Result_Previews: PreviewProvider {
     static var previews: some View {
-        Result().environmentObject(Calculator())
+        Result().environmentObject(CalculatorViewModel())
     }
 }

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class Calculator : ObservableObject {
+class CalculatorViewModel : ObservableObject {
     @Published var calc = Dial()
 }
 

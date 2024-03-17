@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Dialer: View {
-    @EnvironmentObject var data : Calculator
+    @EnvironmentObject var data : CalculatorViewModel
 
     var body: some View {
         ScrollView(.horizontal){
@@ -28,6 +28,6 @@ struct Dialer: View {
 
 struct Dialer_Previews: PreviewProvider {
     static var previews: some View {
-        Dialer().environmentObject(Calculator())
+        Dialer().environmentObject(CalculatorViewModel())
     }
 }
