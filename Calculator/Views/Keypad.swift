@@ -27,7 +27,7 @@ struct Keypad: View {
                 }
                 // Percentage Button
                 RoundButtonAC(symbol: "%") {
-                    viewModel.percentageButtonAction()
+                    viewModel.operatorButtonAction(symbol: "%")
                 }
                 // Divide Operator
                 RoundButtonSymbol(symbol: "÷") {

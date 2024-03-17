@@ -30,37 +30,24 @@ class CalculatorViewModel: ObservableObject {
             calc.calculatedCombination.removeLast()
         }
     }
-    /** Divide Button Action ,
-     divides the current combination with the /100 (percentage)
-     */
-    func percentageButtonAction() {
-        guard let lastOperator = calc.combination.last else {
-            calc.combination = "1/100"
-            return
-        }
-        switch lastOperator {
-        case "+", "-", "*", "/", ".":
-            calc.combination.removeLast()
-            calc.combination += "%"
-            calc.calculatedCombination.removeLast()
-            calc.calculatedCombination += "/100"
-        default:
-            calc.combination += "%"
-            calc.calculatedCombination += "/100"
-        }
-    }
 
     /** Remove  last  operator ,
      check of the last operator need to be replaced
      */
     func removeLastOperatorIfNeeded() {
-        guard let lastOperator = calc.calculatedCombination.last else {
+        guard let lastOperator = calc.combination.last else {
             return
         }
         switch lastOperator {
-        case "+", "-", "*", "/", ".":
+        case "+", "-", "x", ",":
             calc.combination.removeLast()
             calc.calculatedCombination.removeLast()
+        case "÷":
+            calc.combination.removeLast()
+            calc.calculatedCombination.removeLast(3)
+        case "%":
+            calc.combination.removeLast()
+            calc.calculatedCombination.removeLast(6)
         default:
             return
         }
@@ -86,6 +73,10 @@ class CalculatorViewModel: ObservableObject {
             removeLastOperatorIfNeeded()
             calc.combination += ","
             calc.calculatedCombination += "."
+        case "%":
+            removeLastOperatorIfNeeded()
+            calc.combination += "%"
+            calc.calculatedCombination += ".0/100"
         default:
             return
         }
@@ -94,8 +85,6 @@ class CalculatorViewModel: ObservableObject {
      adds to  the current combination the given number input
      */
     func numberButtonAction(number: String) {
-        calc.inp.append(number)
-
         if calc.combination.elementsEqual("0") {
             calc.combination = number
             calc.calculatedCombination = number
@@ -129,9 +118,7 @@ class CalculatorViewModel: ObservableObject {
     }
 }
 
-struct Dial: Identifiable {
-    var id = UUID()
-    var inp: String = "0"
+struct Dial {
     var combination: String = "0"
     var calculatedCombination: String = "0"
     var result: String = "0"
