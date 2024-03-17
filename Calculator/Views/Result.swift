@@ -8,24 +8,21 @@
 import SwiftUI
 
 struct Result: View {
-    @EnvironmentObject var viewModel : CalculatorViewModel
+    @EnvironmentObject var viewModel: CalculatorViewModel
 
     var body: some View {
-        ScrollView(.horizontal){
-            HStack{
-                
+        ScrollView(.horizontal) {
+            HStack {
                 Spacer()
-                if(viewModel.calc.result=="0"){
+                if viewModel.calc.result == "0" {
                     Text("0")
                         .foregroundColor(Color.black)
                         .font(.system(size: 55))
-                }else{Text("\(viewModel.calc.result)")
+                } else {
+                    Text("\(viewModel.calc.result)")
                         .foregroundColor(Color.black)
-                        .font(.system(size: 55))}
-                
-                
-                
-                
+                        .font(.system(size: 55))
+                }
             }
         }
     }

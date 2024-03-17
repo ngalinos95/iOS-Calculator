@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 struct Keypad: View {
-    @EnvironmentObject var viewModel : CalculatorViewModel
+    @EnvironmentObject var viewModel: CalculatorViewModel
 
     var body: some View {
 
@@ -35,7 +35,7 @@ struct Keypad: View {
                 }
             }
             // 2nd row
-            HStack (spacing: 0) {
+            HStack(spacing: 0) {
                 // 7 number button
                 RoundButtonNumber(symbol: "7") {
                     viewModel.numberButtonAction(number: "7")
@@ -54,7 +54,7 @@ struct Keypad: View {
                 }
             }
             // 3d row
-            HStack (spacing: 0) {
+            HStack(spacing: 0) {
                 // 4 number button
                 RoundButtonNumber(symbol: "4") {
                     viewModel.numberButtonAction(number: "4")
@@ -73,7 +73,7 @@ struct Keypad: View {
                 }
             }
             // 4th row
-            HStack (spacing: 0) {
+            HStack(spacing: 0) {
                 // 1 number button
                 RoundButtonNumber(symbol: "1") {
                     viewModel.numberButtonAction(number: "1")
@@ -99,7 +99,7 @@ struct Keypad: View {
                     viewModel.numberButtonAction(number: "0") })
                 // , comma button
                 RoundButtonSymbol(symbol: ",") {
-                    viewModel.numberButtonAction(number: ".")
+                    viewModel.operatorButtonAction(symbol: ".")
                 }
                 // Calc button
                 RoundButtonSymbol(symbol: "=") {

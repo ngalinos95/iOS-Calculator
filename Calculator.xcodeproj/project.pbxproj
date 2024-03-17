@@ -151,6 +151,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				CE7A65302BA79AFF006B68AD /* PBXTargetDependency */,
 			);
 			name = Calculator;
 			productName = Calculator;
@@ -264,6 +265,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		CE7A65302BA79AFF006B68AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CE7A652F2BA79AFF006B68AD /* SwiftLintPlugin */;
+		};
 		CE8BA0922A102D28008B15FD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = CE8BA07F2A102D27008B15FD /* Calculator */;
@@ -524,6 +529,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE7A652F2BA79AFF006B68AD /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE1263762BA6F4B900E24504 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE8BA0782A102D27008B15FD /* Project object */;
 }

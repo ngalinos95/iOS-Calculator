@@ -15,7 +15,7 @@ struct RoundButtonSymbol: View {
     var buttonLabel: some View {
         VStack(alignment: .center) {
             Text(symbol)
-                .font(.system(size: 50, weight: .bold))        
+                .font(.system(size: 50, weight: .bold))
                 .foregroundStyle(.white)
         }
         .padding(10)
@@ -47,4 +47,3 @@ struct RoundButtonSymbol: View {
                       action: { print("button is pressed") })
         .frame(width: 90, height: 90)
 }
-

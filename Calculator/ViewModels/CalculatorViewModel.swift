@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class CalculatorViewModel : ObservableObject {
+class CalculatorViewModel: ObservableObject {
     @Published var calc = Dial()
 
     // MARK: Keypad Actions
@@ -24,8 +24,10 @@ class CalculatorViewModel : ObservableObject {
     func deButtonAction() {
         if calc.combination.count == 1 {
             calc.combination = "0"
+            calc.calculatedCombination = "0"
         } else {
             calc.combination.removeLast()
+            calc.calculatedCombination.removeLast()
         }
     }
     /** Divide Button Action ,
@@ -39,25 +41,53 @@ class CalculatorViewModel : ObservableObject {
         switch lastOperator {
         case "+", "-", "*", "/", ".":
             calc.combination.removeLast()
-            calc.combination += "/100"
+            calc.combination += "%"
+            calc.calculatedCombination.removeLast()
+            calc.calculatedCombination += "/100"
         default:
-            calc.combination += "/100"
+            calc.combination += "%"
+            calc.calculatedCombination += "/100"
         }
     }
 
-    /** Divide Button Action ,
-     adds to  the current combination the divide  operator ÷
+    /** Remove  last  operator ,
+     check of the last operator need to be replaced
      */
-    func operatorButtonAction(symbol: String) {
-        guard let lastOperator = calc.combination.last else {
+    func removeLastOperatorIfNeeded() {
+        guard let lastOperator = calc.calculatedCombination.last else {
             return
         }
         switch lastOperator {
         case "+", "-", "*", "/", ".":
             calc.combination.removeLast()
-            calc.combination += symbol
+            calc.calculatedCombination.removeLast()
         default:
+            return
+        }
+    }
+    /** Operator Button Action ,
+     adds to  the current combination the  given  operator ÷
+     */
+    func operatorButtonAction(symbol: String) {
+        switch symbol {
+        case "+", "-":
+            removeLastOperatorIfNeeded()
             calc.combination += symbol
+            calc.calculatedCombination += symbol
+        case "*":
+            removeLastOperatorIfNeeded()
+            calc.combination += "x"
+            calc.calculatedCombination += "*"
+        case "/":
+            removeLastOperatorIfNeeded()
+            calc.combination += "÷"
+            calc.calculatedCombination += ".0/"
+        case ".":
+            removeLastOperatorIfNeeded()
+            calc.combination += ","
+            calc.calculatedCombination += "."
+        default:
+            return
         }
     }
     /** Number Button Action ,
@@ -68,10 +98,12 @@ class CalculatorViewModel : ObservableObject {
 
         if calc.combination.elementsEqual("0") {
             calc.combination = number
-        } else if (calc.combination.last=="/" && number == "0") {
+            calc.calculatedCombination = number
+        } else if calc.combination.last == "÷" && number == "0" {
             return
         } else {
             calc.combination += number
+            calc.calculatedCombination += number
         }
     }
 
@@ -86,8 +118,9 @@ class CalculatorViewModel : ObservableObject {
         case "+", "-", "*", "/", ".":
             return
         default:
-            let expression = NSExpression(format: calc.combination)
-            if let result = expression.expressionValue(with: nil, context: nil) as? Double {
+            let expression = NSExpression(format: calc.calculatedCombination)
+            if let result = expression.expressionValue(with: nil,
+                                                       context: nil) as? Double {
                 calc.result = String(result)
             } else {
                 print("Invalid equation")
@@ -96,9 +129,10 @@ class CalculatorViewModel : ObservableObject {
     }
 }
 
-struct Dial : Identifiable {
+struct Dial: Identifiable {
     var id = UUID()
-    var inp : String = "0"
-    var combination : String = "0"
-    var result : String = "0"
+    var inp: String = "0"
+    var combination: String = "0"
+    var calculatedCombination: String = "0"
+    var result: String = "0"
 }
