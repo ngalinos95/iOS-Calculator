@@ -8,19 +8,29 @@
 import SwiftUI
 
 struct RoundButtonSymbol: View {
-    var symbol: String = ""
-
+    var symbol: String
     var body: some View {
-        Text(symbol)
-            .font(.system(size: 50, weight: .bold))        .foregroundColor(.white)
-            .frame(maxWidth: 75, maxHeight: 75)
-            .background(Color.blue)
-            .clipShape(RoundedRectangle(cornerRadius: 50))
-            .shadow(radius: 10)
+        VStack(alignment: .center) {
+            Text(symbol)
+                .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
+        }
+        /** we set the frame
+         to infinty in order for out round button
+         view to adopt based on the available space
+         */
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity,
+               alignment: .center)
+        .background {
+            Circle()
+                .foregroundStyle(.blue)
+        }
+        .padding(10)
     }
 }
-struct RoundButtonSymbol_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundButtonSymbol()
-    }
+#Preview("Round Button Symbol") {
+    RoundButtonSymbol(symbol: "+")
+        .frame(width: 90, height: 90)
+        .previewDisplayName("Light Mode")
 }
+
