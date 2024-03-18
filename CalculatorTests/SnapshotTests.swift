@@ -38,7 +38,7 @@ final class SnapshotTests: XCTestCase {
     func testRoundButtonZero() throws {
         // Given
         let sut = RoundButtonZero(symbol: "0" ,
-                                    action: { /* empty */}).toVC()
+                                  action: { /* empty */}).toVC()
         // When
         sut.view.frame.size = CGSize(width: 180, height: 100)
 
@@ -49,7 +49,7 @@ final class SnapshotTests: XCTestCase {
     func testRoundButtonAC() throws {
         // Given
         let sut = RoundButtonAC(symbol: "AC" ,
-                                    action: { /* empty */}).toVC()
+                                action: { /* empty */}).toVC()
         // When
         sut.view.frame.size = CGSize(width: 100, height: 100)
 
