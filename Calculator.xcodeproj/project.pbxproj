@@ -53,6 +53,7 @@
 		CE8BA0BA2A1037D0008B15FD /* Keypad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keypad.swift; sourceTree = "<group>"; };
 		CE8BA0BC2A103E73008B15FD /* Dialer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialer.swift; sourceTree = "<group>"; };
 		CE8BA0BE2A103E7E008B15FD /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		CED3B3652BA8493F00B28853 /* Calculator.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Calculator.xctestplan; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +126,7 @@
 		CE8BA0932A102D28008B15FD /* CalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				CED3B3652BA8493F00B28853 /* Calculator.xctestplan */,
 				CE8BA0942A102D28008B15FD /* CalculatorTests.swift */,
 				CE68F2B42BA82C2B00F4B90A /* SnapshotTests.swift */,
 			);
