@@ -97,6 +97,7 @@ struct Keypad: View {
                 RoundButtonZero(symbol: "0",
                                 action: {
                     viewModel.numberButtonAction(number: "0") })
+                .layoutPriority(1)
                 // , comma button
                 RoundButtonSymbol(symbol: ",") {
                     viewModel.operatorButtonAction(symbol: ".")

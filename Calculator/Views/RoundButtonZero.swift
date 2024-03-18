@@ -15,11 +15,11 @@ struct RoundButtonZero: View {
     var buttonLabel: some View {
         VStack(alignment: .center) {
             Text(symbol)
-                .font(.system(size: 50, weight: .bold))        .foregroundStyle(.white)
+                .font(.system(size: 35, weight: .bold))        .foregroundStyle(.white)
         }
         .padding(10)
-        .frame(width: 175,
-               height: 75,
+        .frame(maxWidth: 165,
+               maxHeight: 75,
                alignment: .center)
         .background {
             /** style should be circular

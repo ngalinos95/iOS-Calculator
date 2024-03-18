@@ -14,7 +14,7 @@ struct RoundButtonNumber: View {
     var buttonLabel: some View {
         VStack(alignment: .center) {
             Text(symbol)
-                .font(.system(size: 40, weight: .bold))        .foregroundStyle(.white)
+                .font(.system(size: 35, weight: .bold))        .foregroundStyle(.white)
         }
         .padding(10)
         /** we set the frame
