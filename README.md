@@ -14,6 +14,8 @@ calculations of (+,-,/,*,%)
 - Text Modifications
 - Button UI
 - VStack,HStack,ZStack interface (with ViewScroller)
+- SPM
+- Unit Tests(Logic + Snapshot testing)
 ## Features
 
 - Calculation of (+,-,/,*,%)
