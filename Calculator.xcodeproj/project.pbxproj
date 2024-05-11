@@ -226,8 +226,8 @@
 			);
 			mainGroup = CE8BA0772A102D27008B15FD;
 			packageReferences = (
-				CE1263762BA6F4B900E24504 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				CE68F2BD2BA836F000F4B90A /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				CE58681A2BEF7508008C88C9 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			productRefGroup = CE8BA0812A102D27008B15FD /* Products */;
 			projectDirPath = "";
@@ -545,6 +545,14 @@
 
 /* Begin XCRemoteSwiftPackageReference section */
 		CE1263762BA6F4B900E24504 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint#plug-in-support";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.54.0;
+			};
+		};
+		CE58681A2BEF7508008C88C9 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint#plug-in-support";
 			requirement = {
